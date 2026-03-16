@@ -1624,13 +1624,6 @@ function Main-Menu {
         Write-Host "  |  " -NoNewline
         Write-Host "$running" -ForegroundColor $(if ($running -eq '运行中') { 'Green' } else { 'Red' })
         Write-Host ""
-        Write-Colored "  ╔══════════════════════════════════════════╗" Magenta
-        Write-Colored "  ║  by Joey     GitHub: byJoey              ║" Magenta
-        Write-Colored "  ║  YouTube: @joeyblog                      ║" Magenta
-        Write-Colored "  ║  Telegram: t.me/+ft-zI76oovgwNmRh       ║" Magenta
-        Write-Colored "  ║  基于：kejilion · cliproxyapi-installer  ║" Magenta
-        Write-Colored "  ╚══════════════════════════════════════════╝" Magenta
-        Write-Host ""
 
         $ocAutostart = Get-AutostartStatus $script:TaskNameOC
         $cpAutostart = Get-AutostartStatus $script:TaskNameCP
