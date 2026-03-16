@@ -1720,7 +1720,7 @@ function Install-Shortcut {
         $block = @"
 
 $markerV2
-function oc { irm https://raw.githubusercontent.com/wholove99/openclaw/edit/main/openclaw.ps1 | iex }
+function oc { irm https://raw.githubusercontent.com/wholove99/openclaw/main/openclaw.ps1 | iex }
 "@
         Add-Content -Path $profilePath -Value $block -Encoding UTF8
     }
