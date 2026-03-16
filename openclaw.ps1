@@ -1617,7 +1617,7 @@ function Main-Menu {
         Write-Colored "  ║            阿斌OPENCLAW安装脚本          ║" Cyan
         Write-Colored "  ╚══════════════════════════════════════════╝" Cyan
         Write-Host "  输入 " -NoNewline
-        Write-Host "oc" -NoNewline -ForegroundColor Yellow
+        Write-Host "abin" -NoNewline -ForegroundColor Yellow
         Write-Host " 可快速启动本脚本" -ForegroundColor DarkGray
         Write-Host "  状态: " -NoNewline
         Write-Host "$installed" -NoNewline -ForegroundColor $(if ($installed -eq '已安装') { 'Green' } else { 'Red' })
@@ -1714,13 +1714,13 @@ function Install-Shortcut {
     if (-not (Test-Path $profileDir)) { New-Item -ItemType Directory -Path $profileDir -Force | Out-Null }
     if (-not (Test-Path $profilePath)) { New-Item -ItemType File -Path $profilePath -Force | Out-Null }
 
-    $markerV2 = '# openclawctl-oc-v2'
+    $markerV2 = '# openclawctl-abin-v1'
     $profileContent = Get-Content $profilePath -Raw -ErrorAction SilentlyContinue
     if (-not $profileContent -or $profileContent -notmatch [regex]::Escape($markerV2)) {
         $block = @"
 
 $markerV2
-function oc { irm https://raw.githubusercontent.com/wholove99/openclaw/main/openclaw.ps1 | iex }
+function abin { irm https://raw.githubusercontent.com/wholove99/openclaw/main/openclaw.ps1 | iex }
 "@
         Add-Content -Path $profilePath -Value $block -Encoding UTF8
     }
